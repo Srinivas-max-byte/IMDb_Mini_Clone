@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <!-- For making website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- For fetching API data having a mix of http(poster in this case) and https content -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+    <!-- For edge compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css"/>
+    <!-- Fontawesome Kit integration -->
+    <script src="https://kit.fontawesome.com/ed63e6d666.js" crossorigin="anonymous"></script>
+    <title>IMDb Mini Clone</title>
+  </head>
+  <body>
+    <!-- LOGO of Page -->
+    <img src="IMDB_Logo.svg" id="Logo">
+    <!-- Search Bar Div containing diff items -->
+    <div id="search-bar">
+      <input type="text" id="search-text-area" placeholder="Search a Movie by title..." onkeyup="findMovies()" onclick="findMovies()"/>
+      <i class="fa-solid fa-xmark" id="clear-text" onclick="clearText()"></i>
+      <span>|</span>
+      <div id="search-btn" onclick="findMovies()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+    <!-- For displaying Search results -->
+    <div id="search-results" class="hide-search-list"></div>
+    <!-- For displaying information about movies -->
+    <div id="movie-info" class="hide-search-list"></div>
+    <!-- Button or link to show favourites movies section -->
+    <div id="Favourites" onclick="showFavouties()"><i class="fa-regular fa-star">  Favourites</i></div>
+    <!-- Button or link to hide the favourites movie section -->
+    <div id="close-Favourites" onclick="closeFavouties()"><i class="fa-solid fa-xmark fa-2x"></i></div>
+    <!-- Div for displaying the favourite movies -->
+    <div id="fav-section">
+      <div id="fav-section-head" style="margin-top: 10px;">
+        <i class="fa-solid fa-heart">  Favourite Movies</i>
+        <!-- Div for clearing all favourite movies functionality -->
+        <i class="fa-solid fa-broom" onclick="clearList()" style="cursor:pointer">  Clear All</i>
+      </div>
+    </div>
+    <!-- External JS file -->
+    <script src="script.js"></script>
+  </body>
+</html>
